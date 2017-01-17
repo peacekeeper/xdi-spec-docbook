@@ -61,15 +61,12 @@ href="file:///c:/oasis/spec-0.6/stylesheets/oasis-specification-html-offline.xsl
 <releaseinfo role="OASIS-specification-latest">&latest-loc;/&name;.html</releaseinfo>
 <releaseinfo role="committee"><ulink url="http://www.oasis-open.org/committees/xdi">OASIS XDI TC</ulink></releaseinfo>
 <authorgroup>
-  <editor> <firstname>Dan</firstname><surname>Blum</surname>
-    <affiliation><orgname>Respect Network</orgname></affiliation>
-    <email>dan.blum@respect.network</email> </editor>
   <editor> <firstname>Markus</firstname><surname>Sabadello</surname>
-    <affiliation><orgname>Danube Tech</orgname></affiliation>
-    <email>markus@danubetech.com</email> </editor>
-  <editor> <firstname>Drummond</firstname><surname>Reed</surname>
     <affiliation><orgname>XDI.org</orgname></affiliation>
-    <email>drummond.reed@xdi.org</email> </editor>
+    <email>markus.sabadello@xdi.org</email> </editor>
+  <editor> <firstname>Drummond</firstname><surname>Reed</surname>
+    <affiliation><orgname>Respect Network</orgname></affiliation>
+    <email>drummond@respectnetwork.net</email> </editor>
 </authorgroup>
 <pubdate>&pubdate;</pubdate>
 <copyright><year>2017</year>
