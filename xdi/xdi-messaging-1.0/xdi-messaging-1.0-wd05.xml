@@ -496,9 +496,9 @@ with the following <firstterm>request message pattern</firstterm> (shown in stat
 
 <programlisting>LINK CONTRACT ADDRESS        &lt;--sender--&gt;[$msg]&lt;--message-id--&gt;/$contract/&lt;--link-contract-address--&gt;
 MESSAGE POLICY               &lt;--sender--&gt;[$msg]&lt;--message-id--&gt;$do$if&lt;--boolean-context--&gt;/&lt;--boolean-operator--&gt;/&lt;--condition--&gt;
-OPERATION PARAMETERS         &lt;--sender--&gt;[$msg]&lt;--message-id--&gt;&lt;--operation--&gt;&lt;--parameter--&gt;/&amp;/&lt;--parameter-value--&gt;
-VARIABLE ADDRESS ASSIGNMENT  &lt;--sender--&gt;[$msg]&lt;--message-id--&gt;&lt;--operation--&gt;&lt;--variable--&gt;/$is/&lt;--variable-value--&gt;
-VARIABLE LITERAL ASSIGNMENT  &lt;--sender--&gt;[$msg]&lt;--message-id--&gt;&lt;--operation--&gt;&lt;--variable--&gt;/&amp;/"&lt;--variable-value--&gt;"
+OPERATION PARAMETERS         &lt;--sender--&gt;[$msg]&lt;--message-id--&gt;$do&lt;--operation--&gt;&lt;--parameter--&gt;/&amp;/&lt;--parameter-value--&gt;
+VARIABLE ADDRESS ASSIGNMENT  &lt;--sender--&gt;[$msg]&lt;--message-id--&gt;$do&lt;--operation--&gt;&lt;--variable--&gt;/$is/&lt;--variable-value--&gt;
+VARIABLE LITERAL ASSIGNMENT  &lt;--sender--&gt;[$msg]&lt;--message-id--&gt;$do&lt;--operation--&gt;&lt;--variable--&gt;/&amp;/"&lt;--variable-value--&gt;"
 OPERATION ON ADDRESS         &lt;--sender--&gt;[$msg]&lt;--message-id--&gt;$do/&lt;--operation--&gt;/&lt;--target-address--&gt;
 OPERATION ON INNER GRAPH     (&lt;--sender--&gt;[$msg]&lt;--message-id--&gt;$do/&lt;--operation--&gt;)&lt;--target-inner-graph--&gt;
 </programlisting>
@@ -564,7 +564,7 @@ OPERATION ON INNER GRAPH     (&lt;--sender--&gt;[$msg]&lt;--message-id--&gt;$do/
 
 <para>Example:</para>
 
-<programlisting>=!:uuid:1111[$msg]*!:uuid:m-1$get&lt;$deref&gt;/&amp;/true
+<programlisting>=!:uuid:1111[$msg]*!:uuid:m-1$do$get&lt;$deref&gt;/&amp;/true
 </programlisting>
 
 </section>
@@ -580,7 +580,7 @@ OPERATION ON INNER GRAPH     (&lt;--sender--&gt;[$msg]&lt;--message-id--&gt;$do/
 
 <para>Example:</para>
 
-<programlisting>=!:uuid:1111[$msg]*!:uuid:m-1$get&lt;$proxy&gt;/&amp;/true
+<programlisting>=!:uuid:1111[$msg]*!:uuid:m-1$do$get&lt;$proxy&gt;/&amp;/true
 </programlisting>
 
 </section>
@@ -597,11 +597,12 @@ OPERATION ON INNER GRAPH     (&lt;--sender--&gt;[$msg]&lt;--message-id--&gt;$do/
 <listitem><para>See the definitions of individual operation for information whether it uses variables,
 which variables it uses, how
 they are used, and whether it is required or optional to assign values to the variables.</para></listitem>
+<listitem><para>Variables are assigned either XDI addresses or XDI literals</para></listitem>
 </orderedlist>
 
 <para>Example:</para>
 
-<programlisting>=!:uuid:1111[$msg]*!:uuid:m-1$connect{$get}/$is/=!:uuid:2222&lt;#email>
+<programlisting>=!:uuid:1111[$msg]*!:uuid:m-1$do$connect{$get}/$is/=!:uuid:2222&lt;#email>
 </programlisting>
 
 </section>
